@@ -6,4 +6,6 @@ elseif game.PlaceId == 10118559731 then
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/L33THub/main/Games/Nicos%20Nextbots'),true))()
 elseif game.PlaceId == 11989217843 then
 	loadstring(game:HttpGet(('https://raw.githubusercontent.com/CJFabro8/L33THub/main/Games/Find%20The%20Family%20Guy'),true))()
+else
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/GlitterLov3r/L33THub/main/Universal'),true))()
 end
