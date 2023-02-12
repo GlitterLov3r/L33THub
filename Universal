@@ -1,0 +1,332 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local L33T = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Corner = Instance.new("UICorner")
+local Top = Instance.new("Frame")
+local Corner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local Corner_3 = Instance.new("UICorner")
+local TextButton_2 = Instance.new("TextButton")
+local Corner_4 = Instance.new("UICorner")
+local TextButton_3 = Instance.new("TextButton")
+local Corner_5 = Instance.new("UICorner")
+local TextButton_4 = Instance.new("TextButton")
+local Corner_6 = Instance.new("UICorner")
+local LeftFrame = Instance.new("Frame")
+local Corner_7 = Instance.new("UICorner")
+local RightFrame = Instance.new("Frame")
+local Corner_8 = Instance.new("UICorner")
+local Button = Instance.new("TextButton")
+
+--Properties:
+
+L33T.Name = "L33T"
+L33T.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Main.Name = "Main"
+Main.Parent = L33T
+Main.BackgroundColor3 = Color3.fromRGB(35, 36, 39)
+Main.BorderColor3 = Color3.fromRGB(36, 39, 53)
+Main.Position = UDim2.new(0.208538413, 0, 0.303704828, 0)
+Main.Size = UDim2.new(0, 619, 0, 341)
+
+Corner.CornerRadius = UDim.new(0, 6)
+Corner.Name = "Corner"
+Corner.Parent = Main
+
+Top.Name = "Top"
+Top.Parent = Main
+Top.BackgroundColor3 = Color3.fromRGB(39, 40, 44)
+Top.Size = UDim2.new(0, 618, 0, 42)
+
+Corner_2.CornerRadius = UDim.new(0, 5)
+Corner_2.Name = "Corner"
+Corner_2.Parent = Top
+
+TextLabel.Parent = Top
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.351132691, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 42)
+TextLabel.Font = Enum.Font.Cartoon
+TextLabel.Text = "Universal"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(41, 42, 47)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, 0.123167157, 0)
+Frame.Size = UDim2.new(0, 618, 0, 299)
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(29, 30, 33)
+TextButton.Position = UDim2.new(0.174076736, 0, 0.0225938261, 0)
+TextButton.Size = UDim2.new(0, 85, 0, 37)
+TextButton.Font = Enum.Font.SourceSansSemibold
+TextButton.Text = "Esp"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 16.000
+TextButton.MouseButton1Down:connect(function()
+	while wait(1) do
+		local players = game.Players:GetPlayers()
+
+		for i, player in ipairs(players) do
+			if player.Character then
+				local charRoot = player.Character:FindFirstChild("HumanoidRootPart")
+				if charRoot then
+					local espBox = Instance.new("BoxHandleAdornment")
+					espBox.Adornee = charRoot
+					espBox.Size = Vector3.new(2, 3, 2)
+					espBox.Color3 = Color3.new(1, 0, 0)
+					espBox.Name = "ESP"
+					espBox.AlwaysOnTop = true
+					espBox.ZIndex = 10
+					espBox.Parent = charRoot
+				end
+			end
+		end
+	end
+end)
+
+Corner_3.CornerRadius = UDim.new(0, 6)
+Corner_3.Name = "Corner"
+Corner_3.Parent = TextButton
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(29, 30, 33)
+TextButton_2.Position = UDim2.new(0.321325928, 0, 0.0225938261, 0)
+TextButton_2.Size = UDim2.new(0, 85, 0, 37)
+TextButton_2.Font = Enum.Font.SourceSansSemibold
+TextButton_2.Text = "IY"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextSize = 16.000
+TextButton_2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+Corner_4.CornerRadius = UDim.new(0, 6)
+Corner_4.Name = "Corner"
+Corner_4.Parent = TextButton_2
+
+TextButton_3.Parent = Frame
+TextButton_3.BackgroundColor3 = Color3.fromRGB(29, 30, 33)
+TextButton_3.Position = UDim2.new(0.475047588, 0, 0.0225938261, 0)
+TextButton_3.Size = UDim2.new(0, 85, 0, 37)
+TextButton_3.Font = Enum.Font.SourceSansSemibold
+TextButton_3.Text = "Fly"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.TextSize = 16.000
+TextButton_3.MouseButton1Down:connect(function()
+	repeat wait() 
+	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+	local mouse = game.Players.LocalPlayer:GetMouse() 
+	repeat wait() until mouse
+	local plr = game.Players.LocalPlayer 
+	local torso = plr.Character.HumanoidRootPart 
+	local flying = true
+	local deb = true 
+	local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+	local maxspeed = 50 
+	local speed = 0 
+
+	function Fly() 
+		local bg = Instance.new("BodyGyro", torso) 
+		bg.P = 9e4 
+		bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+		bg.cframe = torso.CFrame 
+		local bv = Instance.new("BodyVelocity", torso) 
+		bv.velocity = Vector3.new(0,0.1,0) 
+		bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+		repeat wait() 
+			plr.Character.Humanoid.PlatformStand = true 
+			if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+				speed = speed+.5+(speed/maxspeed) 
+				if speed > maxspeed then 
+					speed = maxspeed 
+				end 
+			elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+				speed = speed-1 
+				if speed < 0 then 
+					speed = 0 
+				end 
+			end 
+			if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+				lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+			elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+				bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+			else 
+				bv.velocity = Vector3.new(0,0.1,0) 
+			end 
+			bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+		until not flying 
+		ctrl = {f = 0, b = 0, l = 0, r = 0} 
+		lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+		speed = 0 
+		bg:Destroy() 
+		bv:Destroy() 
+		plr.Character.Humanoid.PlatformStand = false 
+	end 
+	mouse.KeyDown:connect(function(key) 
+		if key:lower() == "e" then 
+			if flying then flying = false 
+			else 
+				flying = true 
+				Fly() 
+			end 
+		elseif key:lower() == "w" then 
+			ctrl.f = 1 
+		elseif key:lower() == "s" then 
+			ctrl.b = -1 
+		elseif key:lower() == "a" then 
+			ctrl.l = -1 
+		elseif key:lower() == "d" then 
+			ctrl.r = 1 
+		end 
+	end) 
+	mouse.KeyUp:connect(function(key) 
+		if key:lower() == "w" then 
+			ctrl.f = 0 
+		elseif key:lower() == "s" then 
+			ctrl.b = 0 
+		elseif key:lower() == "a" then 
+			ctrl.l = 0 
+		elseif key:lower() == "d" then 
+			ctrl.r = 0 
+		end 
+	end)
+	Fly()
+end)
+
+Corner_5.CornerRadius = UDim.new(0, 6)
+Corner_5.Name = "Corner"
+Corner_5.Parent = TextButton_3
+
+TextButton_4.Parent = Frame
+TextButton_4.BackgroundColor3 = Color3.fromRGB(29, 30, 33)
+TextButton_4.Position = UDim2.new(0.623914897, 0, 0.0225938261, 0)
+TextButton_4.Size = UDim2.new(0, 85, 0, 37)
+TextButton_4.Font = Enum.Font.SourceSansSemibold
+TextButton_4.Text = "TpTool"
+TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_4.TextSize = 16.000
+TextButton_4.MouseButton1Down:connect(function()
+	mouse = game.Players.LocalPlayer:GetMouse()
+	tool = Instance.new("Tool")
+	tool.RequiresHandle = false
+	tool.Name = "Click Teleport"
+	tool.Activated:connect(function()
+		local pos = mouse.Hit+Vector3.new(0,2.5,0)
+		pos = CFrame.new(pos.X,pos.Y,pos.Z)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+	end)
+	tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Corner_6.CornerRadius = UDim.new(0, 6)
+Corner_6.Name = "Corner"
+Corner_6.Parent = TextButton_4
+
+LeftFrame.Name = "LeftFrame"
+LeftFrame.Parent = Main
+LeftFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+LeftFrame.Position = UDim2.new(0, 0, 0.123167157, 0)
+LeftFrame.Size = UDim2.new(0, 100, 0, 299)
+
+Corner_7.CornerRadius = UDim.new(0, 6)
+Corner_7.Name = "Corner"
+Corner_7.Parent = LeftFrame
+
+RightFrame.Name = "RightFrame"
+RightFrame.Parent = Main
+RightFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+RightFrame.Position = UDim2.new(0.836833596, 0, 0.123167157, 0)
+RightFrame.Size = UDim2.new(0, 100, 0, 299)
+
+Corner_8.CornerRadius = UDim.new(0, 6)
+Corner_8.Name = "Corner"
+Corner_8.Parent = RightFrame
+
+Button.Name = "Button"
+Button.Parent = Main
+Button.BackgroundColor3 = Color3.fromRGB(39, 40, 44)
+Button.BackgroundTransparency = 1.000
+Button.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.92940551, 0, 0.0295349807, 0)
+Button.Size = UDim2.new(0, 25, 0, 20)
+Button.Font = Enum.Font.SourceSansSemibold
+Button.Text = "X"
+Button.TextColor3 = Color3.fromRGB(166, 166, 166)
+Button.TextScaled = true
+Button.TextSize = 14.000
+Button.TextWrapped = true
+
+-- Scripts:
+
+local function FDBZ_fake_script() -- Main.DragGui 
+	local script = Instance.new('LocalScript', Main)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0, true); -- drag speed
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(FDBZ_fake_script)()
+local function KNOOZOQ_fake_script() -- Button.LocalScript 
+	local script = Instance.new('LocalScript', Button)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+	
+	
+	
+end
+coroutine.wrap(KNOOZOQ_fake_script)()
